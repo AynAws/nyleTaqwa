@@ -92,3 +92,8 @@ footer img {
   height: 3vh;
   margin: 5px;
 }
+
+section {
+  display: flex;
+  justify-content: space-around;
+}

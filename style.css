@@ -97,3 +97,94 @@ section {
   display: flex;
   justify-content: space-around;
 }
+/*GPT*/
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pill {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pill:hover {
+  background: white;
+  color: black;
+}
+
+.pill.active {
+  background: white;
+  color: black;
+}
+
+.filter-dropdown {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.product-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 calc(33.333% - 1rem);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Responsive: 2 cards per row on phones */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .filter-pills {
+    display: none;
+  }
+
+  .filter-dropdown {
+    display: block;
+    width: 100%;
+  }
+}

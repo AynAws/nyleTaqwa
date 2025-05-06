@@ -113,70 +113,151 @@ body {
 
 .filter-bar {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-  align-items: center;
+  gap: 2rem;
 }
 
+/* Vertical pills styled as sidebar links */
 .filter-pills {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column; /* Stack pills vertically */
+  align-items: flex-start;
+  min-width: 200px;
 }
 
 .pill {
-  border: 1px solid white;
-  background: transparent;
-  color: white;
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 1.2rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
+  text-align: left;
+  position: relative;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+/* Add vertical line before each pill */
+.pill::before {
+  content: "|";
+  position: absolute;
+  left: 0;
+  color: #777;
 }
 
 .pill:hover {
-  background: white;
-  color: black;
+  color: white;
 }
 
 .pill.active {
-  background: white;
-  color: black;
+  color: white;
+}
+
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dropdown styled as black button with arrow */
+.filter-dropdown-container {
+  display: none;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  padding: 0.75rem 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.dropdown-button:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid white;
+  margin-left: 10px;
 }
 
 .filter-dropdown {
-  display: none;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  font-size: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: black;
+  border: 1px solid white;
+  border-top: none;
+  z-index: 10;
+  /* REMOVE display: none here */
 }
 
+.filter-dropdown:not(.show) {
+  display: none;
+}
+
+.filter-dropdown.show {
+  display: block;
+}
+
+.dropdown-option {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+}
+
+.dropdown-option:hover {
+  background: #333;
+}
+
+/* Product section next to sidebar */
 .product-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
+  flex: 1;
+  justify-content: flex-start;
 }
 
+/* Product card styling */
 .card {
   background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 8px;
   padding: 1rem;
-  flex: 1 1 calc(33.333% - 1rem);
+  width: calc(33.333% - 2rem);
   box-sizing: border-box;
   text-align: center;
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
-/* Responsive: 2 cards per row on phones */
+/* Responsive: hide pills and show dropdown full width */
 @media (max-width: 768px) {
-  .card {
-    flex: 1 1 calc(50% - 1rem);
+  .filter-bar {
+    flex-direction: column;
   }
 
   .filter-pills {
@@ -186,5 +267,7 @@ body {
   .filter-dropdown {
     display: block;
     width: 100%;
+    align-self: flex-start; /* optional: align left on mobile */
+    margin-bottom: 1rem;
   }
 }

@@ -41,6 +41,7 @@ main, header, footer {
   width: 100%;
   height: fit-content;
   text-align: center;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 main {
@@ -246,6 +247,7 @@ body {
   width: calc(33.333% - 2rem);
   box-sizing: border-box;
   text-align: center;
+  color: white;
 }
 
 .card img {
@@ -269,5 +271,9 @@ body {
     width: 100%;
     align-self: flex-start; /* optional: align left on mobile */
     margin-bottom: 1rem;
+  }
+
+  .filter-dropdown-container {
+    display: block;
   }
 }

@@ -1,39 +1,94 @@
 [
     {
       "id": 1,
-      "name": "Galaxy Hoodie",
+      "name": "Embroidered Hoodie",
       "category": "hoodies",
-      "image": "https://via.placeholder.com/300x300"
+      "image": "https://via.placeholder.com/300x300",
+      "price": 50
     },
     {
       "id": 2,
-      "name": "Vintage Tee",
-      "category": "shirts",
-      "image": "https://via.placeholder.com/300x300"
+      "name": "Edge Hoodie",
+      "category": "hoodies",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 50
     },
     {
       "id": 3,
-      "name": "Wool Beanie",
-      "category": "accessories",
-      "image": "https://via.placeholder.com/300x300"
+      "name": "Reflective Hoodie",
+      "category": "hoodies",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 45
     },
     {
       "id": 4,
-      "name": "Logo Hoodie",
-      "category": "hoodies",
-      "image": "https://via.placeholder.com/300x300"
+      "name": "Salah Tee",
+      "category": "shirts",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 25
     },
     {
       "id": 5,
-      "name": "Oversized Tee",
+      "name": "Eternal Tee",
       "category": "shirts",
-      "image": "https://via.placeholder.com/300x300"
+      "image": "https://via.placeholder.com/300x300",
+      "price": 25
     },
     {
       "id": 6,
-      "name": "Chain Necklace",
+      "name": "Reflective Tee",
+      "category": "shirts",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 25
+    },
+    {
+      "id": 7,
+      "name": "Keychain",
       "category": "accessories",
-      "image": "https://via.placeholder.com/300x300"
+      "image": "https://via.placeholder.com/300x300",
+      "price": 10
+    },
+    {
+      "id": 8,
+      "name": "Smile Tee",
+      "category": "shirts",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 25
+    },
+    {
+      "id": 9,
+      "name": "Numeral Tee",
+      "category": "shirts",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 10
+    },
+    {
+      "id": 10,
+      "name": "Masjid Tee",
+      "category": "shirts",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 10
+    },
+    {
+      "id": 11,
+      "name": "Bound By Time Hoodie",
+      "category": "hoodies",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 50
+    },
+    {
+      "id": 12,
+      "name": "Windbreaker",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 50
+    },
+    {
+      "id": 13,
+      "name": "Duffel Bag",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/300x300",
+      "price": 35
     }
   ]
   

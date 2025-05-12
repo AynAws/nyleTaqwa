@@ -29,6 +29,16 @@ createApp({
         products.value = await res.json()
     })
 
+    const hoveredProductId = ref(null)
+
+    const setHovered = (id) => {
+      hoveredProductId.value = id
+    }
+
+    const clearHovered = () => {
+      hoveredProductId.value = null
+    }
+
     return {
         products,
         selectedCategory,
@@ -37,7 +47,10 @@ createApp({
         formatLabel,
         dropdownOpen,
         toggleDropdown,
-        selectCategory
+        selectCategory,
+        hoveredProductId,
+        setHovered,
+        clearHovered
     }
 },
     template: `
@@ -72,8 +85,14 @@ createApp({
 
       <section class="product-section">
         <div v-for="product in filteredProducts" :key="product.id" class="card">
-          <img :src="product.image" :alt="product.name" />
-          <p>{{ product.name }}</p>
+          <h4>{{ product.name }}</h4>
+          <img
+            :src="hoveredProductId === product.id ? product.image2 : product.image"
+            :alt="product.name"
+            @mouseenter="setHovered(product.id)"
+            @mouseleave="clearHovered"
+          />
+          <p>${"$"}{{ product.price }}.00 USD</p>
         </div>
       </section>
     </div>

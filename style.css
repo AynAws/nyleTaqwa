@@ -98,6 +98,12 @@ section {
   display: flex;
   justify-content: space-around;
 }
+
+.disabled {
+  cursor: not-allowed;
+  color: rgb(177, 177, 177);
+}
+
 /*GPT*/
 body {
   margin: 0;
@@ -250,6 +256,17 @@ body {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 1rem);
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
+
 .card img {
   width: 100%;
   height: 250px;
@@ -276,4 +293,35 @@ body {
   .filter-dropdown-container {
     display: block;
   }
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #111;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  position: relative;
+}
+.modal-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1rem;
+}
+.modal-content button {
+  margin-top: 1rem;
 }

@@ -79,6 +79,10 @@ createApp({
       cart.value.reduce((sum, item) => sum + item.price * item.quantity, 0)
     )
 
+    const isCartOpen = ref(false);
+
+    const openCart = () => { isCartOpen.value = true }
+    const closeCart = () => { isCartOpen.value = false }
     return {
         products,
         selectedCategory,
@@ -95,7 +99,10 @@ createApp({
         addToCart,
         removeFromCart,
         updateQuantity,
-        totalPrice
+        totalPrice,
+        isCartOpen,
+        openCart,
+        closeCart
     }
 },
     template: `
@@ -128,6 +135,7 @@ createApp({
             </div>
           </div>
 
+      <button class="black-bg" @click="openCart">🛒 View Cart ({{ cart.length }})</button>
       <section class="product-section">
         <div v-for="product in filteredProducts" :key="product.id" class="card">
           <h4>{{ product.name }}</h4>
@@ -138,8 +146,29 @@ createApp({
             @mouseleave="clearHovered"
           />
           <p>${"$"}{{ product.price }}.00 USD</p>
+          <button class="black-bg" @click="addToCart(product)">Add to Cart</button>
         </div>
       </section>
+    </div>
+  </div>
+  <div v-if="isCartOpen" class="modal-overlay" @click.self="closeCart">
+    <div class="modal-content">
+      <h2>Your Cart</h2>
+      <div v-if="cart.length > 0">
+        <div v-for="item in cart" :key="item.id" class="modal-item">
+          <h4>{{ item.name }}</h4>
+          <p>Qty:
+            <button @click="updateQuantity(item.id, item.quantity - 1)">-</button>
+            {{ item.quantity }}
+            <button @click="updateQuantity(item.id, item.quantity + 1)">+</button>
+          </p>
+          <p>Total: ${"$"}{{ item.price * item.quantity }}</p>
+          <button @click="removeFromCart(item.id)">Remove</button>
+        </div>
+        <h3>Total: ${"$"}{{ totalPrice }}</h3>
+        <button class="black-bg" @click="closeCart">Close</button>
+      </div>
+      <p v-else>Your cart is empty.</p>
     </div>
   </div>
 </div>

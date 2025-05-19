@@ -26,7 +26,7 @@ createApp({
 
     onMounted(async () => {
       loadCart()
-        const res = await fetch('/products.json')
+        const res = await fetch('products.json')
         products.value = await res.json()
     })
 
